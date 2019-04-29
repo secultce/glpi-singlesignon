@@ -680,11 +680,10 @@ class PluginSinglesignonProvider extends CommonDBTM {
       if ($this->_provider === null || $this->_code === null) {
          return false;
       }
-
+      
       $this->_token = $this->_provider->getAccessToken('authorization_code', [
          'code' => $this->_code
       ]);
-
       return $this->_token;
    }
 
@@ -735,7 +734,8 @@ class PluginSinglesignonProvider extends CommonDBTM {
          return $user;
       }
 
-      $login = false;
+      $email_parts = explode('@', $email);
+      $login = $email_parts[0];
       $login_fields = ['login', 'username'];
 
       foreach ($login_fields as $field) {
@@ -749,7 +749,37 @@ class PluginSinglesignonProvider extends CommonDBTM {
          return $user;
       }
 
+
+      $user = $this->createNewUser($login);
+      if ($user) {
+         return $user;
+      }
+
       return false;
+   }
+
+   public function createNewUser($login) {
+      $user = new User();
+
+       //ADD USER
+       $input = [];
+       $input['add'] = 1;
+       $input['is_active'] = 1;      
+       $input['name'] = $login;      
+       $input['authtype'] = 1;
+       $input['usercategories_id'] = 0;      
+       $input['usertitles_id'] = 0;
+       $input['_is_recursive'] = 0;
+       $input['_profiles_id'] = 1;
+       $input['_entities_id'] = 0;
+ 
+       $result = $user->add($input);
+ 
+       if ($result && $user->getFromDBbyName($login)) {
+          return $user;
+       }
+
+       return false;
    }
 
    public function login() {
