@@ -9,6 +9,8 @@ function plugin_singlesignon_display_login() {
 
    $html = [];
 
+   echo Html::css('/plugins/singlesignon/css/singlesignon.css');
+   
    foreach ($rows as $row) {
       $query = [];
 
@@ -18,8 +20,9 @@ function plugin_singlesignon_display_login() {
 
       $url = PluginSinglesignonProvider::getCallbackUrl($row['id'], $query);
 
-      $html[] = '<a href="' . $url . '" class="singlesignon" style="color: #CFCFCF">' .
-            sprintf(__sso('[ Login with %s ]'), $row['name']) . '</a>';
+      $html[] = '<a href="' . $url . '" class="singlesignon singlesignon-btn" > <span class="singlesignon-btn-label">' .
+            'Entrar com o ' . $row['name'] . '</span> </a>';
+      $html[] =  '<div class="singlesignon-terms"> Se clicar em "Entrar com o ' . $row['name'] .'" e não for usuário do GLPI, você será cadastrado e estará aceitando os Termos e condições e a Política de privacidade do ' . $row['name'] .'.</div>';
    }
 
    echo implode("<br />\n", $html);
