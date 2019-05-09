@@ -1,0 +1,153 @@
+
+#firstboxlogin {
+    background-color: #ffffff;
+}
+
+#boxlogin .login_input {
+    position: relative;
+    width: 13em;
+    margin: 15px auto 5px;
+    width: 240px;
+}
+
+#boxlogin input[type=text], #boxlogin input[type=password] {
+    width: 100%;
+    height: 42px;
+    display: block;
+    border: 1px solid #CCC;
+    padding: 3px 3px 3px 40px;
+    font-size: 1.2em;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+#boxlogin .login_input:before {
+    font-family: 'Font Awesome\ 5 Free';
+    left: 8px;
+    position: absolute;
+    top: 10px;
+    color: #9b9b9b;
+    font-size: 24px;
+    font-weight: 900;
+}
+
+#boxlogin input.submit {
+    margin-top: 20px;
+    width: 100%;
+    height: 30px;
+    font-size: 1.3em;
+    color: #ffffff;
+    background-color: #09a071;
+}
+
+#boxlogin label {
+    color: #666;
+    font-size: 1.2em;
+}
+
+.singlesignon-btn {
+    background-color: #033;
+    display: block;
+    padding: 10px;
+    width: 250px;
+    height: 30px;
+    margin: auto;
+    text-align: left;
+}
+.singlesignon-btn::before {
+    background: url(../img/ceara-brasao.png) no-repeat;
+    background-size: 28px;
+    content: '';
+    display: block;
+    position: relative;
+    top: -7px;
+    left: 15px;
+    width: 30px;
+    height: 50px;
+    float: left;
+}
+.singlesignon-btn-label {
+    display: block;
+    float: right;
+    padding: 5px;
+    width: 200px;
+    text-align: center;
+    font-size: 14px;
+    line-height: 20px;
+    font-weight: 600;
+    color: #fff;
+    font: bold 1.3em Arial, Helvetica;
+}
+
+
+#logo_login {
+    background-color: #057d58;
+}
+
+#text-login {
+    background-color: #09a071;
+    color: #fff;
+    
+}
+#text-login::before {
+    white-space: pre;
+    content: "SECRETARIA DA CULTURA DO ESTADO DO CEARÁ \A CÉLULA DE TECNOLOGIA DA INFORMAÇÃO E COMUNICAÇÃO";
+}
+
+
+
+.singlesignon-btn:hover {
+    background-color: #057d58;
+    box-shadow: 0px 1px 1px #999;
+}
+
+.singlesignon-terms {
+    width: 450px;
+    height: 30px;
+    margin: auto;
+    color: #666;
+    font-size: 10px;
+}
+
+
+
+#footer-login {
+    position: absolute;
+    right: 0px;
+    bottom: 0px !important;
+    font-size: 10px;
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    width: 100%;
+    height: 20px;
+    background-color: #057d58;
+    text-align: center;
+    padding: 10px;
+}
+
+
+#boxlogin {
+    padding-top: 10px;
+    bottom: 0;
+    width: 20%;
+    margin: 50px 20px 20px 30%;
+    display: block;
+    float: left;
+    min-height: 250px;
+    box-shadow: 3px 3px 10px 1px #ccc;
+}
+
+
+#display-login {
+    width: 20%;
+    margin: 50px auto 20px 20px;
+    padding: 80px 10px 10px 10px;
+    font-size: 13px;
+    text-align: center;
+    overflow-x: hidden;
+    overflow-y: auto;
+    box-sizing: border-box;
+    display: block;
+    float: left;
+}
+    
