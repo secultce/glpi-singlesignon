@@ -745,10 +745,14 @@ class PluginSinglesignonProvider extends CommonDBTM {
          }
       }
 
-      if ($login && $user->getFromDBbyName($login)) {
-         return $user;
-      }
+      $result = $user->find(['name' => $login]);
 
+      if (!empty($result)) {
+         $userData = reset($result);
+         if ($user->getFromDB($userData['id'])) {
+            return $user;
+         }
+      }
 
       $user = $this->createNewUser($login);
       if ($user) {
